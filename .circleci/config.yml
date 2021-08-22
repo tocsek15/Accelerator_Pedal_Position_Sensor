@@ -4,7 +4,7 @@ orbs:
   win: circleci/windows@2.2.0 # The Windows orb give you everything you need to start using the Windows executor.
 
 jobs:
-  build:                # BUILD job definition
+  job_build:                # BUILD job definition
     executor:
       name: win/default # executor type
       size: "medium"    # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
@@ -14,7 +14,7 @@ jobs:
       - checkout
       - run: Write-Host 'This is the BUILD job.'
       
-  test:             # TEST job definition
+  job_test:             # TEST job definition
     executor:               
       name: win/default # executor type
       size: "medium"    # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
@@ -22,9 +22,9 @@ jobs:
     steps:
       # Commands are run in a Windows virtual machine environment
       - checkout
-      - run: Write-Host 'This is the TEST job.''
+      - run: Write-Host 'This is the  job.''
      
-  static_analyzer:      # SA job definition
+  job_static_analyzer:      # SA job definition
     executor:
       name: win/default   # executor type
       size: "medium"      # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
@@ -34,7 +34,7 @@ jobs:
       - checkout
       - run: Write-Host 'This is the SA job.'
        
-  coverage:               # COVERAGE job definition
+  job_coverage:               # COVERAGE job definition
     executor:
       name: win/default   # executor type
       size: "medium"      # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
@@ -45,7 +45,7 @@ jobs:
       - run: Write-Host 'This is the COVERAGE job.''
      
   workflows:
-     - build
-     - test
-     - static_analyzer
-     - coverage
+     - job_build
+     - job_test
+     - job_static_analyzer
+     - job_coverage
