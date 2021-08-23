@@ -1,51 +1,31 @@
-version: 2.1 # Use version 2.1 to enable orb usage.
+version: 2.1
 
-orbs:
-  win: circleci/windows@2.2.0 # The Windows orb give you everything you need to start using the Windows executor.
-
+# Define the jobs we want to run for this project
 jobs:
-  job_build:                # BUILD job definition
-    executor:
-      name: win/default # executor type
-      size: "medium"    # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
+  build:
+    docker:
+      - image: circleci/<language>:<version TAG>
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - checkout
+      - run: echo "this is the build job"
+  test:
+    docker:
+      - image: circleci/<language>:<version TAG>
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - checkout
+      - run: echo "this is the test job"
 
-    steps:
-      # Commands are run in a Windows virtual machine environment
-      - checkout
-      - run: Write-Host 'This is the BUILD job.'
-      
-  job_test:             # TEST job definition
-    executor:               
-      name: win/default # executor type
-      size: "medium"    # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
-     
-    steps:
-      # Commands are run in a Windows virtual machine environment
-      - checkout
-      - run: Write-Host 'This is the  job.''
-     
-  job_static_analyzer:      # SA job definition
-    executor:
-      name: win/default   # executor type
-      size: "medium"      # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
-
-    steps:
-      # Commands are run in a Windows virtual machine environment
-      - checkout
-      - run: Write-Host 'This is the SA job.'
-       
-  job_coverage:               # COVERAGE job definition
-    executor:
-      name: win/default   # executor type
-      size: "medium"      # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
-
-    steps:
-      # Commands are run in a Windows virtual machine environment
-      - checkout
-      - run: Write-Host 'This is the COVERAGE job.''
-     
-  workflows:
-     job_build
-     job_test
-     job_static_analyzer
-     job_coverage
+# Orchestrate our job run sequence
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
