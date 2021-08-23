@@ -45,7 +45,7 @@ jobs:
       - run: Write-Host 'This is the COVERAGE job.''
      
   workflows:
-     - job_build
-     - job_test
-     - job_static_analyzer
-     - job_coverage
+     job_build
+     job_test
+     job_static_analyzer
+     job_coverage
