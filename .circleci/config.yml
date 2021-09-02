@@ -37,10 +37,10 @@ jobs:
       - run: ls -la output
       - run: mv output/* .
       # link the compiled files into an executable
-      - run: gcc -o program *.o
+      - run: gcc -o APP_Main *.o
       # confirm program exists and is executable
       - run: ls -la
-      - run: ./program
+      - run: ./APP_Main
       # persist as artifact
       - store_artifacts:
-          path: program
+          path: APP_Main

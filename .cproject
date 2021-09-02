@@ -209,7 +209,7 @@
                             							
                             <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1007993681" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
                             							
-                            <builder buildPath="${workspace_loc:/Thesis-APS}/Release" command="mingw32-make" id="cdt.managedbuild.builder.gnu.cross.1707336395" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
+                            <builder arguments="" buildPath="${workspace_loc:/Thesis-APS}/build" command="mingw32-make" id="cdt.managedbuild.builder.gnu.cross.1707336395" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
                             							
                             <tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.729426054" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
                                 								
