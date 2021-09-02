@@ -13,7 +13,7 @@ workflows:
 jobs:
 
   compile:
-    parallelism: 2
+    parallelism: 1
     docker:
       - image: gcc:8.2
     steps:
