@@ -1,6 +1,7 @@
 /* AD Converter Simulation */
 
-#include <app_converter.h>
+#include "app_converter.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 

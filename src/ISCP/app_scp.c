@@ -1,5 +1,7 @@
 /* Safety Critical part */
 
+#include "app_scp.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 

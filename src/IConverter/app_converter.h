@@ -1,3 +1,3 @@
-#include <app_converter.h>
+/* Converter header */
 
 extern void app_converter(void);

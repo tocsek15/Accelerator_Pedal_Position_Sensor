@@ -1,3 +1,4 @@
+/* Common utilities header */
 
 #define CONST_STUFF 15u
 
