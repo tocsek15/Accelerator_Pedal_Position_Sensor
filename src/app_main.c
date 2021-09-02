@@ -7,13 +7,16 @@
 
 /* Entry point of the program */
 int main(void) {
-  printf("This is the main! \n");
-
-  int tempNum = CONST_STUFF;
-  printf("The common is reachable because the number is: %d \n", tempNum);
+  printf(":::::::::::::::::::::\n");
+  printf("Response from MAIN \n");
 
   app_converter();
   scp_main();
+
+  printf(":::::::::::::::::::::\n");
+  int tempNum = CONST_STUFF;
+  printf("The common is reachable because the number is: %d \n", tempNum);
+  printf(":::::::::::::::::::::\n");
   tempNum = app_common_adder(1, 2);
   printf("The common is reachable because the number is: %d \n", tempNum);
 
