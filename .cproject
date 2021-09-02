@@ -17,29 +17,43 @@
                     					
                     <folderInfo id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.317208390." name="/" resourcePath="">
                         						
-                        <toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.467117443" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
+                        <toolChain id="cdt.managedbuild.toolchain.gnu.cross.base.555190625" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.base">
                             							
-                            <targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.467117443.534103671" name=""/>
+                            <option id="cdt.managedbuild.option.gnu.cross.prefix.1226311577" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix"/>
                             							
-                            <builder id="org.eclipse.cdt.build.core.settings.default.builder.855101319" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
+                            <option id="cdt.managedbuild.option.gnu.cross.path.445956897" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path"/>
                             							
-                            <tool id="org.eclipse.cdt.build.core.settings.holder.libs.1253230129" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
+                            <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.271687774" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
                             							
-                            <tool id="org.eclipse.cdt.build.core.settings.holder.227211474" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
+                            <builder buildPath="${workspace_loc:/Thesis-APS}/Preference Configuration" id="org.eclipse.linuxtools.cdt.autotools.core.toolchain.builder.713272537" superClass="org.eclipse.linuxtools.cdt.autotools.core.toolchain.builder"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1500816179" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
                                 								
-                                <inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1680469847" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+                                <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1366477152" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
                                 							
                             </tool>
                             							
-                            <tool id="org.eclipse.cdt.build.core.settings.holder.420638769" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder">
+                            <tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1860709851" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1674460122" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
                                 								
-                                <inputType id="org.eclipse.cdt.build.core.settings.holder.inType.256566098" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+                                <inputType id="cdt.managedbuild.tool.gnu.c.linker.input.1625298984" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+                                    									
+                                    <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+                                    									
+                                    <additionalInput kind="additionalinput" paths="$(LIBS)"/>
+                                    								
+                                </inputType>
                                 							
                             </tool>
                             							
-                            <tool id="org.eclipse.cdt.build.core.settings.holder.1471042667" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
+                            <tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1544213461" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.archiver.2136341674" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.assembler.455916774" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
                                 								
-                                <inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1176835280" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+                                <inputType id="cdt.managedbuild.tool.gnu.assembler.input.1708656607" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
                                 							
                             </tool>
                             						
@@ -57,15 +71,11 @@
                 				
                 <extensions>
                     					
+                    <extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+                    					
                     <extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
                     					
-                    <extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-                    					
                     <extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-                    					
-                    <extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-                    					
-                    <extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
                     					
                     <extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
                     				
@@ -85,8 +95,6 @@
         	
     </storageModule>
     	
-    <storageModule moduleId="scannerConfiguration"/>
-    	
     <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
     	
     <storageModule moduleId="refreshScope" versionNumber="2">
@@ -100,5 +108,17 @@
     </storageModule>
     	
     <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+    	
+    <storageModule moduleId="scannerConfiguration">
+        		
+        <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+        		
+        <scannerConfigBuildInfo instanceId="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.317208390">
+            			
+            <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+            		
+        </scannerConfigBuildInfo>
+        	
+    </storageModule>
     
 </cproject>
