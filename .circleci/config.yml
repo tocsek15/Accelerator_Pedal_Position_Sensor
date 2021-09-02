@@ -2,7 +2,7 @@ version: 2
 
 workflows:
   version: 2
-  dist-compile:
+  compile_and_link:
     jobs:
       - compile
       - link:
