@@ -1,33 +1,46 @@
-version: 2.1
+version: 2
 
-orbs:
-  win: circleci/windows@2.2.0 # The Windows orb give you everything you need to start using the Windows executor.
-
-# Define the jobs we want to run for this project
-jobs:
-  build:
-    executor:
-      name: win/default # executor type
-      size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
-      
-    steps:
-      - checkout
-      - run: echo "this is the build job"
-      
-  test:
-    executor:
-      name: win/default # executor type
-      size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
-      
-    steps:
-      - checkout
-      - run: echo "this is the test job"
-
-# Orchestrate our job run sequence
 workflows:
-  build_and_test:
+  version: 2
+  dist-compile:
     jobs:
-      - build
-      - test:
-          requires:
-            - build
+      - compile
+      - link:
+          requires: 
+            - compile
+
+
+jobs:
+
+  compile:
+    parallelism: 2
+    docker:
+      - image: gcc:8.2
+    steps:
+      - checkout
+      #split all c files based on the index ID we're running on, pass subset to gcc compile
+      - run: circleci tests glob "**/*.c" | circleci tests split --split-by=filesize | xargs gcc -c 
+      # move compiled files to specific folder and persist to workspace
+      - run: mkdir output && mv *.o output
+      - persist_to_workspace:
+          root: output
+          paths:
+            - "*.o"
+
+  link:
+    docker:
+      - image: gcc:8.2
+    steps:
+      # instead of checking out, restore workspace (will merge all parallel containers from previous job)
+      - attach_workspace:
+          at: output
+      - run: ls -la output
+      - run: mv output/* .
+      # link the compiled files into an executable
+      - run: gcc -o program *.o
+      # confirm program exists and is executable
+      - run: ls -la
+      - run: ./program
+      # persist as artifact
+      - store_artifacts:
+          path: program
