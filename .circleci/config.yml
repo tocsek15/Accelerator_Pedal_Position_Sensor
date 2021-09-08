@@ -4,17 +4,12 @@ orbs:
   win: circleci/windows@2.4.0
 
 jobs:
-  download_cmake:
+  build:
     executor: win/default
     steps:
       - checkout
-      - run:
-          name: Download CMake
-          command: |
-            $ProgressPreference = "SilentlyContinue"
-            Invoke-WebRequest -URI https://github.com/Kitware/CMake/releases/download/v3.16.4/cmake-3.16.4-win64-x64.zip -OutFile $Env:HOMEPATH\cmake-3.16.4-win64-x64.zip
-            Expand-Archive $Env:HOMEPATH\cmake-3.16.4-win64-x64.zip -DestinationPath "$Env:ProgramFiles"
-            Rename-Item "$Env:ProgramFiles\cmake-3.16.4-win64-x64" -NewName CMake
+      - run: $env:Path+=";$Env:\.cmake\bin"
+      - run: gcc --version
       - run: cmake --version
    
 
@@ -22,6 +17,6 @@ workflows:
   version: 2
   run-all:
     jobs:
-      - download_cmake
+      - build
    
           
