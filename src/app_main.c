@@ -17,7 +17,7 @@ int main(void) {
   int tempNum = CONST_STUFF;
   printf("The common is reachable because the number is: %d \n", tempNum);
   printf(":::::::::::::::::::::\n");
-  tempNum = app_common_adder(1, 2);
+  tempNum = app_common_adder(1u, 2u);
   printf("The common is reachable because the number is: %d \n", tempNum);
 
   return 0;
