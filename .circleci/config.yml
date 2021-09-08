@@ -1,57 +1,30 @@
-version: 2
+version: 2.1
+
+orbs:
+  win: circleci/windows@2.4.0
+
+jobs:
+  download_cmake:
+    executor: win/default
+    steps:
+      - checkout
+      - run:
+          name: Download CMake
+          command: |
+            $ProgressPreference = "SilentlyContinue"
+            Invoke-WebRequest -URI https://github.com/Kitware/CMake/releases/download/v3.16.4/cmake-3.16.4-win64-x64.zip -OutFile $Env:HOMEPATH\cmake-3.16.4-win64-x64.zip
+            Expand-Archive $Env:HOMEPATH\cmake-3.16.4-win64-x64.zip -DestinationPath "$Env:ProgramFiles"
+            Rename-Item "$Env:ProgramFiles\cmake-3.16.4-win64-x64" -NewName CMake
+      - run: .ci\install-vcpkg.ps1 "$Env:CIRCLE_WORKING_DIRECTORY"
+      - run: .ci\build-project.ps1
+      - run: cmake --version
+      
+   
 
 workflows:
   version: 2
-  compile_and_link:
+  run-all:
     jobs:
-      - compile
-      - link:
-          requires: 
-            - compile
-
-jobs:
-
-  compile:
-    parallelism: 1
-    docker:
-      - image: gcc:8.2
-      - image: cmake
-    steps:
-      - checkout
-      #split all c files based on the index ID we're running on, pass subset to gcc compile
-      - run: gcc --version
-      - run: cmake --version
-      
-
-  link:
-    docker:
-      - image: gcc:8.2
-    steps:
-      # instead of checking out, restore workspace (will merge all parallel containers from previous job)
-      - attach_workspace:
-          at: output
-      - run: ls -la output
-      - run: mv output/* .
-      # link the compiled files into an executable
-      - run: gcc -o APP_Main *.o
-      # confirm program exists and is executable
-      - run: ls -la
-      - run: ./APP_Main
-      # persist as artifact
-      - store_artifacts:
-          path: APP_Main
+      - download_cmake
+   
           
-  compile_gcov:
-    parallelism: 1
-    docker:
-      - image: gcc:8.2
-    steps:
-      - checkout
-      #split all c files based on the index ID we're running on, pass subset to gcc compile
-      - run: circleci tests glob "**/*.c" | circleci tests split --split-by=filesize | xargs gcc -fprofile-arcs -ftest-coverage test.c
-      # move compiled files to specific folder and persist to workspace
-      - run: mkdir coverage && mv *.o coverage
-      - persist_to_workspace:
-          root: coverage
-          paths:
-            - "*.o"
