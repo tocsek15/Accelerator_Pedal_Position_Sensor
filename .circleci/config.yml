@@ -8,9 +8,7 @@ jobs:
     executor: win/default
     steps:
       - checkout
-      - run: $env:Path+=";$Env:\.cmake\bin"
       - run: gcc --version
-      - run: cmake --version
    
 
 workflows:
