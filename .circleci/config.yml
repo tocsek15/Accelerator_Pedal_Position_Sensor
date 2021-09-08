@@ -8,7 +8,8 @@ jobs:
     executor: win/default
     steps:
       - checkout
-      - command: gcc --version
+      - run: 
+         command: gcc --version
    
 
 workflows:
