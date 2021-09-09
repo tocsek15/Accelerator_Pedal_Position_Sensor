@@ -11,13 +11,13 @@ jobs:
     steps:
       - checkout
       - run: cmake/install
-      - run: cmake --version
    
 
 workflows:
   version: 2
   run-all:
     jobs:
+      - cmake/install
       - build
    
           
