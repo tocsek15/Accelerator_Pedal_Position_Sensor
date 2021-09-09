@@ -19,7 +19,7 @@ workflows:
   run-all:
     jobs:
       - build
-          post-steps:
-            - jira/notify
+    post-steps:
+      - jira/notify
    
           
