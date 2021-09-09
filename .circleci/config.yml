@@ -10,8 +10,12 @@ jobs:
     steps:
       - checkout
       - run: choco install cmake -y
-      - command: echo 'export PATH=C:\Program Files\CMake\bin:$PATH' >> $BASH_ENV
-      - run: cmake --version
+      - run:
+         name: Setting CMake environmental variable
+         command: echo 'export PATH=C:\Program Files\CMake\bin:$PATH' >> $BASH_ENV
+      - run: 
+         name: Checking CMake version
+         command: cmake --version
    
 
 workflows:
