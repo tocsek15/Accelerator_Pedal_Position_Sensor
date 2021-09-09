@@ -10,6 +10,9 @@ jobs:
     executor: win/default
     steps:
       - checkout
+      - run: ls
+      - cmake/install:
+          install-dir: C:\Users\circleci\CMake
       
 
 workflows:
@@ -17,7 +20,4 @@ workflows:
   run-all:
     jobs:
       - build
-      - cmake/install:
-      	  install-dir: 'C:\Users\circleci\CMake'
-   
-          
+         
