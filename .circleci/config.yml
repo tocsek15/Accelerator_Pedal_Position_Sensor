@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run: ls
       - cmake/install:
-          install-dir: C:\Users\circleci\CMake
+          install-dir: C:\Users\circleci\project\CMake
       
 
 workflows:
