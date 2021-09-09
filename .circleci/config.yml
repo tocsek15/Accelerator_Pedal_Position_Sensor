@@ -11,7 +11,8 @@ jobs:
     steps:
       - checkout
       - run: ls
-      - cmake/install
+      - cmake/install:
+        install-dir: .\CMake
       
 
 workflows:
