@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   win: circleci/windows@2.4.0
+  jira: circleci/jira@1.3.1
 
 jobs:
   build:
@@ -18,5 +19,7 @@ workflows:
   run-all:
     jobs:
       - build
+          post-steps:
+            - jira/notify
    
           
