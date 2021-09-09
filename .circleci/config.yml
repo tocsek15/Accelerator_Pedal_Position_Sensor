@@ -13,6 +13,9 @@ jobs:
       - run:
          name: Setting CMake environmental variable
          command: echo 'export PATH=C:\Program Files\CMake\bin:$PATH' >> $BASH_ENV
+      - run:
+         command: cd C:\Program Files\CMake\bin
+         command: ls
       - run: 
          name: Checking CMake version
          command: cmake --version
