@@ -9,11 +9,8 @@ jobs:
     executor: win/default
     steps:
       - checkout
-      - name: Installing CMake
       - run: choco install cmake -y
-      - name: Setting CMake Environmental Variable
       - command: echo 'export PATH=C:\Program Files\CMake\bin:$PATH' >> $BASH_ENV
-      - name: Testing CMake
       - run: cmake --version
    
 
