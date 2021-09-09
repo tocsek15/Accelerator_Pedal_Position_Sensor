@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "./ICommon/app_common.h"
-#include "./IConverter/app_converter.h"
-#include "./ISCP/app_scp.h"
+#include "./ICommon/apps_common.h"
+#include "./IConverter/apps_converter.h"
+#include "./ISCP/apps_scp.h"
 
 /* Entry point of the program */
 int main(void) {
