@@ -8,8 +8,9 @@ jobs:
     executor: win/default
     steps:
       - checkout
-      - run: 
-         command: gcc --version
+      - run: choco install cmake -y
+      - run: $env:Path+=";$Env:ProgramFiles\CMake\bin";
+      - run: cmake --version
    
 
 workflows:
