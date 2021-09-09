@@ -12,8 +12,6 @@ jobs:
       - checkout
       - run: ls
       - run: choco install cmake
-    environment:
-      PATH: "C:\Program Files\CMake\bin:$PATH"
       
 
 workflows:
