@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - run: choco install cmake -y
-      - run: $env:Path+=";$Env:ProgramFiles\CMake\bin";
+      - run: $env:Path+=";$Env:ProgramFiles\CMake\bin"
       - run: cmake --version
    
 
