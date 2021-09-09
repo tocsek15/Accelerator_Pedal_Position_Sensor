@@ -6,6 +6,12 @@ orbs:
   cmake: sensu/cmake@1.0.0
 
 jobs:
+  cmake_install:
+    executor: win/default
+    steps:
+      - cmake/install
+
+  
   build:
     executor: win/default
     steps:
@@ -17,8 +23,7 @@ workflows:
   version: 2
   run-all:
     jobs:
-      - cmake:
-      	install
+      - cmake_install
       - build
    
           
