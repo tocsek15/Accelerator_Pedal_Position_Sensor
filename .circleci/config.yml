@@ -11,8 +11,7 @@ jobs:
     steps:
       - checkout
       - run: ls
-      - cmake/install:
-          install-dir: C:\Users\circleci\project\CMake
+      - cmake/install
       
 
 workflows:
