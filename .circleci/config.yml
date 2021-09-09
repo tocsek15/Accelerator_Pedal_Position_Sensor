@@ -11,8 +11,9 @@ jobs:
     steps:
       - checkout
       - run: ls
-      - cmake/install:
-        install-dir: .\CMake
+      - run: choco install cmake
+    environment:
+      PATH: "C:\Program Files\CMake\bin:$PATH"
       
 
 workflows:
