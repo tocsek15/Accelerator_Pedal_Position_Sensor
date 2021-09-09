@@ -12,7 +12,7 @@ jobs:
       - run: choco install cmake -y
       - run: 
          name: Checking CMake version
-         command: cmake --version
+         command: 'C:\Program Files\CMake\bin\cmake.exe --version'
    
 
 workflows:
