@@ -11,8 +11,7 @@ jobs:
       - checkout
       - run: ls
       - run: choco install cmake
-      - run:
-         command: echo 'export PATH="C:/Program Files/CMake/bin:$PATH"' >> $BASH_ENV
+      - run: $env:path += ";C:\Program Files\CMake\bin"
       - run: cmake --version
       
 
