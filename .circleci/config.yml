@@ -15,6 +15,7 @@ jobs:
          command: echo 'export PATH=C:\Program Files\CMake\bin:$PATH' >> $BASH_ENV
       - run:
          command: cd C:\Program Files\CMake\bin
+      - run:
          command: ls
       - run: 
          name: Checking CMake version
