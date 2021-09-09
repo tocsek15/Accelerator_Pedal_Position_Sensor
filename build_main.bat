@@ -1,10 +1,12 @@
 @echo :::::::::::::::::::::::::::::::::::::::::::::::::::
 @echo ::::::: Accelerator Pedal Position Sensor :::::::::
 @echo ::::::: CMake Version: ::::::::::::::::::::::::::::
+@echo off
 cmake --version
 @echo ::::::: Building has started! :::::::::::::::::::::
-cmake -S src -B build -C build 
+@echo off
+cmake -G "MinGW Make" -S src -B "build/src" -C "build/src" 
 @echo ::::::::::::::::::::::::: RUN :::::::::::::::::::::
 @echo off
-cd ./build/
+cd ./build/src
 cmake --build .
