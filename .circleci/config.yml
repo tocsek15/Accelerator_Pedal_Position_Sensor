@@ -10,9 +10,6 @@ jobs:
     steps:
       - checkout
       - run: choco install cmake -y
-      - run:
-         name: Setting CMake environmental variable
-         command: set PATH="C:\Program Files\CMake\bin\";%PATH%
       - run: 
          name: Checking CMake version
          command: cmake --version
