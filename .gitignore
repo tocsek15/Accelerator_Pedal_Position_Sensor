@@ -55,3 +55,6 @@ dkms.conf
 /Preference Configuration/
 /Debug/
 /Release/
+
+# CMake Build folder
+/build/
