@@ -11,6 +11,7 @@ jobs:
     steps:
       - checkout
       - run: cmake/install
+      - run: cmake --version
    
 
 workflows:
