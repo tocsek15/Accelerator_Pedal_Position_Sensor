@@ -17,7 +17,8 @@ workflows:
   version: 2
   run-all:
     jobs:
-      - cmake/install
+      - cmake:
+      	install
       - build
    
           
