@@ -8,7 +8,7 @@ jobs:
   prepare_env:
     executor: win/default
     steps:
-      - run: choco install cmake      
+      - run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' 
       - run: choco install mingw
       - run: gcc --version
       - run: gcov --version
