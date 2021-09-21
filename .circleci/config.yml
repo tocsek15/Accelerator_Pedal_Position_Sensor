@@ -65,6 +65,6 @@ workflows:
       - coverage:
           requires:
             - test
-      - jiry/notify
+      - jira/notify
       
          
