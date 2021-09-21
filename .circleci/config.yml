@@ -14,6 +14,7 @@ jobs:
       - run: gcc --version
       - run: gcov --version
       - run: cmake --version
+      - run: cmake -G "MinGW Make" -S src -B "build/src" -C "build/src" 
 
           
   checks:
@@ -52,8 +53,6 @@ workflows:
   run-all:
     jobs:
       - prepare_env:
-          post-steps:
-            - jira/notify
       - checks:
           requires:
             - prepare_env
