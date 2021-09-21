@@ -3,18 +3,40 @@ version: 2.1
 orbs:
   win: circleci/windows@2.4.0
   jira: circleci/jira@1.3.1
-  cmake: sensu/cmake@1.0.0
 
 jobs:
   prepare_env:
     executor: win/default
     steps:
-      - run: choco install cmake
-          command: cmake --version
+      - run: choco install cmake      
       - run: choco install mingw
+          
+  checks:
+    executor: win/default
+    steps:
+      - run: 
+          command: cmake --version
+      - run: 
           command: gcc --version
           command: gcov --version
           
+   build:
+     executor: win/default
+     steps:
+       - run: 
+          command echo Build
+   
+   test:
+     executor: win/default
+     steps:
+       - run: 
+          command echo Test
+   
+   coverage:
+     executor: win/default
+     steps:
+       - run: 
+          command echo Coverage
           
       
       
@@ -23,4 +45,16 @@ workflows:
   run-all:
     jobs:
       - prepare_env
+      - checks:
+          requires:
+            - prepare_env
+      - build:
+          requires:
+            - checks
+      - test:
+          requires:
+            - build
+      - coverage:
+          requires:
+            - test
          
