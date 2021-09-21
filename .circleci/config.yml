@@ -8,11 +8,13 @@ jobs:
   prepare_env:
     executor: win/default
     steps:
+      - checkout
       - run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' 
       - run: choco install mingw
       - run: gcc --version
       - run: gcov --version
       - run: cmake --version
+      - run: build_main.bat
 
           
   checks:
@@ -63,4 +65,6 @@ workflows:
       - coverage:
           requires:
             - test
+      - jiry/notify
+      
          
