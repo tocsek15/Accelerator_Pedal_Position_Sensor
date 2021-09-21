@@ -18,25 +18,26 @@ jobs:
           command: cmake --version
       - run: 
           command: gcc --version
+      - run:
           command: gcov --version
           
-   build:
-     executor: win/default
-     steps:
+  build:
+    executor: win/default
+    steps:
        - run: 
-          command echo Build
+          command: echo Build
    
-   test:
-     executor: win/default
-     steps:
-       - run: 
-          command echo Test
+  test:
+    executor: win/default
+    steps:
+      - run: 
+         command: echo Test
    
-   coverage:
-     executor: win/default
-     steps:
-       - run: 
-          command echo Coverage
+  coverage:
+    executor: win/default
+    steps:
+      - run: 
+          command: echo Coverage
           
       
       
