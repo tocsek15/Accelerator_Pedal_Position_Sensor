@@ -9,12 +9,17 @@ jobs:
     executor: win/default
     steps:
       - checkout
+      - restore_cache:
+      		keys:
       - run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' 
       - run: choco install mingw
       - run: gcc --version
       - run: gcov --version
       - run: cmake --version
-      - run: cmake -S src -B "build/src" 
+      - run: cmake -S src -B "build/src"
+      - save_cache:
+          paths:
+            - C:\Users\circleci\.nuget\packages
 
           
   checks:
