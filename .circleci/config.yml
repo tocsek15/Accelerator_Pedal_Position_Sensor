@@ -10,18 +10,12 @@ jobs:
     executor: win/default
     steps:
       - run: choco install cmake
-      - run: choco install mingw
-          
-  
-  checks:
-    executor: win/default
-    steps:
-      - run: 
-          command: gcc --version
-      - run: 
-          command: gcov --version
-      - run: 
           command: cmake --version
+      - run: choco install mingw
+          command: gcc --version
+          command: gcov --version
+          
+          
       
       
 workflows:
@@ -29,5 +23,4 @@ workflows:
   run-all:
     jobs:
       - prepare_env
-      - checks
          
