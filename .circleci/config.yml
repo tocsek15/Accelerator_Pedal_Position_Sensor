@@ -14,7 +14,7 @@ jobs:
       - run: gcc --version
       - run: gcov --version
       - run: cmake --version
-      - run: cmake -G "MinGW Make" -S src -B "build/src" -C "build/src" 
+      - run: cmake -S src -B "build/src" 
 
           
   checks:
