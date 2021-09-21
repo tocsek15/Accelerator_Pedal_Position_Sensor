@@ -6,19 +6,17 @@ orbs:
   cmake: sensu/cmake@1.0.0
 
 jobs:
-  build:
+  checks:
     executor: win/default
     steps:
-      - checkout
-      - run: ls
-      - run: choco install cmake
-      - run: $env:path += ";C:\Program Files\CMake\bin"
+      - run: gcc --version
+      - run: gcov --version
       - run: cmake --version
       
-
+      
 workflows:
   version: 2
   run-all:
     jobs:
-      - build
+      - checks
          
