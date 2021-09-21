@@ -52,7 +52,7 @@ workflows:
   run-all:
     jobs:
       - prepare_env:
-          post_steps:
+          post-steps:
             - jira/notify
       - checks:
           requires:
