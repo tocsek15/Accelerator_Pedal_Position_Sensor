@@ -11,6 +11,9 @@ jobs:
       - checkout
       - run: choco install cmake      
       - run: choco install mingw
+      - run: gcc --version
+      - run: gcov --version
+      - run: cmake --version
 
           
   checks:
