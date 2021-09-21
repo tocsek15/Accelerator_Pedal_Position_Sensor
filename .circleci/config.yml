@@ -14,7 +14,6 @@ jobs:
       - run: gcc --version
       - run: gcov --version
       - run: cmake --version
-      - run: build_main.bat
 
           
   checks:
