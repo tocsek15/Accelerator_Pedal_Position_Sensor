@@ -6,6 +6,13 @@ orbs:
   cmake: sensu/cmake@1.0.0
 
 jobs:
+  prepare_env:
+    executor: win/default
+    steps:
+      - run: choco install cmake
+      - run: choco install mingw
+          
+  
   checks:
     executor: win/default
     steps:
