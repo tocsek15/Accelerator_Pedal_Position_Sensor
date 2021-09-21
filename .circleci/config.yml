@@ -28,5 +28,6 @@ workflows:
   version: 2
   run-all:
     jobs:
+      - prepare_env
       - checks
          
