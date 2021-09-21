@@ -53,6 +53,8 @@ workflows:
   run-all:
     jobs:
       - prepare_env
+          post-steps:
+            - jira/notify
       - checks:
           requires:
             - prepare_env
@@ -65,6 +67,5 @@ workflows:
       - coverage:
           requires:
             - test
-      - jira/notify
       
          
