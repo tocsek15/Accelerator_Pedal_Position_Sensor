@@ -27,6 +27,8 @@ jobs:
   checks:
     executor: win/default
     steps:
+      - restore_cache:
+          keys: gem-cache-v1
       - run: cmake --version
       - run: gcc --version
       - run: gcov --version
