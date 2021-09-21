@@ -11,18 +11,14 @@ jobs:
       - checkout
       - run: choco install cmake      
       - run: choco install mingw
-      - run: 
-          command: cmake --version
-      - run: 
-          command: gcc --version
-      - run:
-          command: gcov --version
+
           
   checks:
     executor: win/default
     steps:
-      - run:
-          command: echo Checks
+      - run: cmake --version
+      - run: gcc --version
+      - run: gcov --version
       
           
   build:
