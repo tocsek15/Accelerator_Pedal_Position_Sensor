@@ -13,16 +13,13 @@ jobs:
           keys: gem-cache-v1
       - run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' 
       - run: choco install mingw
-      - run: gcc --version
-      - run: gcov --version
-      - run: cmake --version
       - run: cmake -S src -B "build/src"
       - save_cache:
           key: gem-cache-v1
           paths:
-            - C:\Users\circleci\.nuget\packages      
-
-
+            - C:\ProgramData\chocolatey\lib\mingw\tools\install
+            - C:\Program Files\CMake\   
+        
           
   checks:
     executor: win/default
