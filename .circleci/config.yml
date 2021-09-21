@@ -9,9 +9,12 @@ jobs:
   checks:
     executor: win/default
     steps:
-      - run: gcc --version
-      - run: gcov --version
-      - run: cmake --version
+      - run: 
+        command: gcc --version
+      - run: 
+        command: gcov --version
+      - run: 
+        command: cmake --version
       
       
 workflows:
