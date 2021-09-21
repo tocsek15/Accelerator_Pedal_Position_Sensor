@@ -51,7 +51,7 @@ workflows:
   version: 2
   run-all:
     jobs:
-      - prepare_env
+      - prepare_env:
           post_steps:
             - jira/notify
       - checks:
