@@ -18,9 +18,10 @@ jobs:
   checks:
     executor: win/default
     steps:
+      - run: cmake --version
       - run: gcc --version
       - run: gcov --version
-      - run: cmake --version
+      
       
           
   build:
