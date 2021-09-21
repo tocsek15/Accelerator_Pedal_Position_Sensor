@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   win: circleci/windows@2.4.0
-  jira: circleci/jira@1.3.1
+  jira: circleci/jira@1.0.5
 
 jobs:
   prepare_env:
@@ -10,12 +10,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys: gem-cache-v1
+          keys: myapp-{{ checksum "package-lock.json" }}
       - run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' 
       - run: choco install mingw
       - run: cmake -S src -B "build/src"
       - save_cache:
-          key: gem-cache-v1
+          key: myapp-{{ checksum "package-lock.json" }}
           paths:
             - C:\ProgramData\chocolatey\lib\mingw\tools\install
             - C:\Program Files\CMake\   
