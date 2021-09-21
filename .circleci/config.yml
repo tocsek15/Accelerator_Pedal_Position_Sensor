@@ -24,7 +24,6 @@ jobs:
       - run: gcc --version
       - run: gcov --version
       
-      
           
   build:
     executor: win/default
@@ -53,6 +52,8 @@ workflows:
   run-all:
     jobs:
       - prepare_env
+          post_steps:
+            - jira/notify
       - checks:
           requires:
             - prepare_env
