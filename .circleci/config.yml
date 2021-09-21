@@ -9,23 +9,20 @@ jobs:
     executor: win/default
     steps:
       - checkout
-      - restore_cache:
-          keys: myapp-{{ checksum "package-lock.json" }}
       - run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' 
       - run: choco install mingw
       - run: cmake -S src -B "build/src"
-      - save_cache:
-          key: myapp-{{ checksum "package-lock.json" }}
-          paths:
-            - C:\ProgramData\chocolatey\lib\mingw\tools\install
-            - C:\Program Files\CMake\   
+      - run: cd ./build/src
+      - run: cmake --build .
+      - run: make
+      - run: .\APPS_Main.exe
         
           
   checks:
     executor: win/default
     steps:
       - restore_cache:
-          keys: gem-cache-v1
+          keys: myapp-{{ checksum "package-lock.json" }}
       - run: cmake --version
       - run: gcc --version
       - run: gcov --version
