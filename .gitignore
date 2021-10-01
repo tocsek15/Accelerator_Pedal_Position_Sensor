@@ -58,3 +58,4 @@ dkms.conf
 
 # CMake Build folder
 /build/
+/CMakeFiles/
