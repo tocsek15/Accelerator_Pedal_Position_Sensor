@@ -9,8 +9,8 @@ jobs:
     executor: win/default
     steps:
       - checkout
-      - run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' 
       - run: choco install mingw
+      - run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
       - run: cmake -S src -B "build/src"
       - run: cd ./build/src
       - run: cmake --build .

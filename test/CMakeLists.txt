@@ -4,13 +4,13 @@ enable_testing()
 
 # Adding UCUnit library
 add_library(ucunit STATIC
-  ucunit/v1.0.1/i386/System.c
-  ucunit/v1.0.1/ucunit_variables.c
+  _ucunit/v1.0.1/i386/System.c
+  _ucunit/v1.0.1/Testsuite.c
   )
 
 # Adding target directory of UCUnit
 target_include_directories(ucunit PUBLIC
-  ucunit/v1.0.1
+  ${CMAKE_CURRENT_LIST_DIR}
   )
  
 # Adding module subdirectories

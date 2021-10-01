@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
     	
-    <configuration id="cdt.managedbuild.config.gnu.cross.exe.release.2140162222" name="Release">
+    <configuration id="cdt.managedbuild.config.gnu.cross.exe.release.675660243" name="Build">
         		
         <extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
             			
@@ -23,7 +23,7 @@
         	
     </configuration>
     	
-    <configuration id="cdt.managedbuild.config.gnu.cross.exe.release.675660243" name="Build">
+    <configuration id="cdt.managedbuild.config.gnu.cross.exe.release.675660243.1727773547" name="Build Test">
         		
         <extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
             			
