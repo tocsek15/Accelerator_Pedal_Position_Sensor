@@ -1,0 +1,71 @@
+version: 2.1
+
+orbs:
+  win: circleci/windows@2.4.0
+  jira: circleci/jira@1.0.5
+
+jobs:
+  prepare_env:
+    executor: win/default
+    steps:
+      - checkout
+      - run: choco install mingw
+      - run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
+      - run: cmake -S src -B "build/src"
+      - run: cd ./build/src
+      - run: cmake --build .
+      - run: make
+      - run: .\APPS_Main.exe
+        
+          
+  checks:
+    executor: win/default
+    steps:
+      - restore_cache:
+          keys: myapp-{{ checksum "package-lock.json" }}
+      - run: cmake --version
+      - run: gcc --version
+      - run: gcov --version
+      
+          
+  build:
+    executor: win/default
+    steps:
+       - checkout
+       - run: 
+          command: echo Build
+   
+  test:
+    executor: win/default
+    steps:
+      - checkout
+      - run: 
+         command: echo Test
+   
+  coverage:
+    executor: win/default
+    steps:
+      - run: 
+          command: echo Coverage
+          
+      
+      
+workflows:
+  version: 2
+  run-all:
+    jobs:
+      - prepare_env
+      - checks:
+          requires:
+            - prepare_env
+      - build:
+          requires:
+            - checks
+      - test:
+          requires:
+            - build
+      - coverage:
+          requires:
+            - test
+      
+         

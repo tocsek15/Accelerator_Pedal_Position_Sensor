@@ -50,3 +50,11 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Eclipse C Project folders
+/Preference Configuration/
+/Debug/
+/Release/
+
+# CMake Build folder
+/build/
