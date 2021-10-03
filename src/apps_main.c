@@ -1,23 +1,16 @@
+/* Includes */
 #include <apps_common.h>
+#include <apps_conf.h>
 #include <apps_converter.h>
 #include <apps_scp.h>
-#include <stdio.h>
-#include <stdlib.h>
 
-/* Entry point of the program */
-int main(void) {
-  printf(":::::::::::::::::::::\n");
-  printf("Response from MAIN \n");
+/* Functions */
+CMN_Rc APPS_init(void)
+{
+  return CMN_NOT_IMPLEMENTED;
+}
 
-  app_converter();
-  scp_main();
-
-  printf(":::::::::::::::::::::\n");
-  int tempNum = CONST_STUFF;
-  printf("The common is reachable because the number is: %d \n", tempNum);
-  printf(":::::::::::::::::::::\n");
-  tempNum = app_common_adder(1u, 2u);
-  printf("The common is reachable because the number is: %d \n", tempNum);
-
+int main(void)
+{
   return 0;
 }

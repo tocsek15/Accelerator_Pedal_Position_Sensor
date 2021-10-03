@@ -1,3 +1,6 @@
 /* Converter header */
+/* Includes */
+#include <apps_common.h>
 
-extern void app_converter(void);
+/* Functions */
+extern CMN_Rc APPS_converter(void);

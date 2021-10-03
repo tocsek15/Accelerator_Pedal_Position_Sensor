@@ -1,3 +1,6 @@
 /* Safety Critical Part Header file */
+/* Includes */
+#include <apps_common.h>
 
-extern void scp_main(void);
+/* Function Prototypes */
+extern CMN_Rc APPS_SCP_main(void);

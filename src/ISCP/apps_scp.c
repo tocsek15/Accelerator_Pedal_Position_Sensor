@@ -1,11 +1,9 @@
 /* Safety Critical part */
+/* Includes */
+#include <apps_scp.h>
 
-#include "apps_scp.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-
-void scp_main(void) {
-  printf(":::::::::::::::::::::\n");
-  printf("Response from SCP \n");
+/* Functions */
+CMN_Rc APPS_SCP_main(void)
+{
+  return CMN_NOT_IMPLEMENTED;
 }

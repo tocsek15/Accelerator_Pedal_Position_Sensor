@@ -1,5 +1,9 @@
 /* Common utilities */
+/* Includes */
+#include <apps_common.h>
 
-#include "apps_common.h"
-
-int app_common_adder(int a, int b) { return a + b; }
+/* Functions */
+CMN_Rc APPS_CMN_printer(CMN_cnstStr aString)
+{
+  return CMN_NOT_IMPLEMENTED;
+}
