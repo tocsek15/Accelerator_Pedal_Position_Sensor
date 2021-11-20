@@ -2,8 +2,8 @@
 
 add_library(
 	ICommon_Lib STATIC
-	aps_common.c
-	aps_common.h
+	iaps_common.c
+	iaps_common.h
 	)
 
 target_include_directories(ICommon_Lib PUBLIC

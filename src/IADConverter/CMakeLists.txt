@@ -1,9 +1,9 @@
-# IConverter interface CMake file
+# IADConverter interface CMake file
 
 add_library(
 	IADConverter_Lib STATIC
-	aps_converter.c
-	aps_converter.h
+	iaps_adconverter.c
+	iaps_adconverter.h
 	)
 	
 target_include_directories(IADConverter_Lib PUBLIC
