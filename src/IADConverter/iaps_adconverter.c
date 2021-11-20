@@ -1,9 +1,8 @@
 /* AD Converter Simulation */
 
-#include "apps_converter.h"
-
 #include <stdio.h>
 #include <stdlib.h>
+#include "iaps_adconverter.h"
 
 void app_converter(void) {
   printf(":::::::::::::::::::::\n");

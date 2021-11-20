@@ -2,7 +2,8 @@
 
 add_library(
 	ICommon_Lib STATIC
-	apps_common.c
+	aps_common.c
+	aps_common.h
 	)
 
 target_include_directories(ICommon_Lib PUBLIC

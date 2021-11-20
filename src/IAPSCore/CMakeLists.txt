@@ -2,8 +2,8 @@
 
 add_library(
 	ISCP_Lib STATIC
-	apps_scp.h
-	apps_scp.c
+	aps_scp.h
+	aps_scp.c
 	)
 
 target_include_directories(ISCP_Lib PUBLIC

@@ -1,6 +1,6 @@
 /* Safety Critical part */
 
-#include "apps_scp.h"
+#include "iaps_core.h"
 
 #include <stdio.h>
 #include <stdlib.h>
