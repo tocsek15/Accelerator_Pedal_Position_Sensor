@@ -7,14 +7,14 @@ add_subdirectory(ICommon)
 add_subdirectory(ITimer)
 
 # Linking libraries
-target_link_libraries(APS_Main PRIVATE ICommon_Lib)
-target_link_libraries(APS_Main PRIVATE IADConverter_Lib)
-target_link_libraries(APS_Main PRIVATE ISCP_Lib)
-target_link_libraries(APS_Main PRIVATE ITimer_Lib)
+target_link_libraries(APS_Main PUBLIC IADConverter_Lib)
+target_link_libraries(APS_Main PUBLIC IAPSCore_Lib)
+target_link_libraries(APS_Main PUBLIC IAPSCommon_Lib)
+target_link_libraries(APS_Main PUBLIC ITimer_Lib)
 
 target_include_directories(APS_Main PUBLIC
-  ICommon_Lib
   IADConverter_Lib
-  ISCP_Lib
+  IAPSCore_Lib
+  IAPSCommon_Lib
   ITimer_Lib
   )
