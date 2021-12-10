@@ -1,17 +1,34 @@
-#include <stdio.h>
-#include <stdlib.h>
+/** @file aps_main.c
+ *
+ * @brief A description of the module’s purpose.
+ *
+ */
 
-#include "IADConverter/iaps_adconverter.h"
-#include "IAPSCore/iaps_core.h"
-#include "ICommon/iaps_common.h"
+/* Includes */
+#include <aps_main.h>
+
+
+/* Functions */
+static CMN_Rc APS_init(void)
+{
+
+  CMN_Rc returnCode;
+
+  /* Initializing interfaces */
+  returnCode = IADConverter_init();
+  CMN_RC_CHECK(returnCode);
+  returnCode = IAPSCore_init();
+  CMN_RC_CHECK(returnCode);
+  returnCode = ITimer_init();
+  CMN_RC_CHECK(returnCode);
+
+  return returnCode;
+}
 
 /* Entry point of the program */
-int APS_main(void) {
-
-	/* Initialising interfaces */
-	IADConverter_init();
-	IAPSCore_init();
-	ITimer_init();
-
-  return 0;
+int main(void)
+{
+  return APS_init();
 }
+
+/*** end of file ***/

@@ -1,10 +1,24 @@
-/* AD Converter Simulation */
+/** @file iaps_adconverter.c
+ *
+ * @brief Analog-digital converter interface for the APS.
+ *
+ */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "iaps_adconverter.h"
+/* Includes */
+#include <iaps_adconverter.h>
 
-void app_converter(void) {
-  printf(":::::::::::::::::::::\n");
-  printf("Response from CONVERTER \n");
+/* Functions */
+
+CMN_Rc IADConverter_init(void)
+{
+
+  return CMN_E_NOT_IMPLEMENTED;
 }
+
+CMN_Rc IADConverter_getSensorValue(void)
+{
+
+  return CMN_E_NOT_IMPLEMENTED;
+}
+
+/*** end of file ***/

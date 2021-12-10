@@ -1,12 +1,9 @@
-
-
-
 # Adding the main executable
 add_executable(APS_Main aps_main.c)
 # Specifying subdirectories
-add_subdirectory(ICommon)
 add_subdirectory(IADConverter)
-add_subdirectory(ISCP)
+add_subdirectory(IAPSCore)
+add_subdirectory(ICommon)
 add_subdirectory(ITimer)
 
 # Linking libraries
@@ -21,4 +18,3 @@ target_include_directories(APS_Main PUBLIC
   ISCP_Lib
   ITimer_Lib
   )
-

@@ -58,3 +58,6 @@ dkms.conf
 
 # CMake Build folder
 /build/
+
+# Readme
+*.md

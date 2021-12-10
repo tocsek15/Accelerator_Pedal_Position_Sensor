@@ -1,11 +1,15 @@
-/* Safety Critical part */
+/** @file iaps_core.c
+ *
+ * @brief Core functionalities of the APS.
+ *
+ */
+/* Includes */
+#include <iaps_core.h>
 
-#include "iaps_core.h"
+/* Functions */
 
-#include <stdio.h>
-#include <stdlib.h>
+CMN_Rc IAPSCore_init(void)
+{
 
-void scp_main(void) {
-  printf(":::::::::::::::::::::\n");
-  printf("Response from SCP \n");
+  return CMN_E_NOT_IMPLEMENTED;
 }

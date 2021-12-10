@@ -2,28 +2,20 @@
  *
  * @brief A description of the module’s purpose.
  *
- * @par
- * COPYRIGHT NOTICE: (c) 2018 Barr Group. All rights reserved.
  */
+/* Includes */
+#include <iaps_adconverter.h>
+#include <iaps_common.h>
+#include <iaps_core.h>
+#include <iaps_timer.h>
 
-#include <stdint.h>
-#include <stdbool.h>
-
+/* Functions */
 /*!
  * @brief Initial function of the APS
  *
- * @param[in] num1  The first number to be compared.
- * @param[in] num2  The second number to be compared.
- *
- * @return The value of the larger number.
+ * @return State of the initialization.
  */
-int8_t
-max8 (int8_t num1, int8_t num2)
-{
-    return ((num1 > num2) ? num1 : num2);
-}
+
+static CMN_Rc APS_init(void);
 
 /*** end of file ***/
-
-
-int APS_main(void);
