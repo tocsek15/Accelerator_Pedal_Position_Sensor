@@ -1,3 +1,3 @@
-add_subdirectory(ICommon)
-add_subdirectory(IConverter)
-add_subdirectory(ISCP)
+add_subdirectory(IADConverter)
+add_subdirectory(IAPSCore)
+add_subdirectory(ITimer)

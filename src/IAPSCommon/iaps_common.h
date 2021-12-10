@@ -7,6 +7,7 @@
 /* Includes */
 #include <stdbool.h>
 #include <stdint.h>
+#include <stdio.h>
 
 
 /* Interface specific defines */
@@ -28,6 +29,8 @@ typedef uint8_t CMN_Rc;
 typedef bool    CMN_Bool;
 
 /* Common functions */
+
+void CMN_print(char* stringToPrint);
 
 
 /*** end of file ***/

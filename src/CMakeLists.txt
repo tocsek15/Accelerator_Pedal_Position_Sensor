@@ -3,7 +3,7 @@ add_executable(APS_Main aps_main.c)
 # Specifying subdirectories
 add_subdirectory(IADConverter)
 add_subdirectory(IAPSCore)
-add_subdirectory(ICommon)
+add_subdirectory(IAPSCommon)
 add_subdirectory(ITimer)
 
 # Linking libraries

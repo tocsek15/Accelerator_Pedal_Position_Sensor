@@ -5,9 +5,9 @@
  */
 /* Includes */
 #include <iaps_adconverter.h>
-#include <iaps_common.h>
 #include <iaps_core.h>
 #include <iaps_timer.h>
+#include "IAPSCommon/iaps_common.h"
 
 /* Functions */
 /*!

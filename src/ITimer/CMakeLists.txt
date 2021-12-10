@@ -1,9 +1,8 @@
 # ITimer interface CMake file
 
 add_library(
-	ITimer_Lib STATIC
-	iaps_timer.c
-	iaps_timer.h
+	ITimer_Lib OBJECT
+	${CMAKE_CURRENT_LIST_DIR}/iaps_timer.c
 	)
 	
 target_include_directories(ITimer_Lib PUBLIC
