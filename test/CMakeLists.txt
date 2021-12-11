@@ -10,8 +10,9 @@ add_library(ucunit STATIC
 
 # Adding target directory of UCUnit
 target_include_directories(ucunit PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}
+  _ucunit/v1.0.1
   )
+  
  
 # Adding module subdirectories
 # TODO Enable integration tests if needed

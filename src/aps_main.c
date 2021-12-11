@@ -5,7 +5,10 @@
  */
 
 /* Includes */
-#include "aps_main.h"
+#include <iaps_adconverter.h>
+#include <iaps_common.h>
+#include <iaps_core.h>
+#include <iaps_timer.h>
 
 
 /* Functions */
@@ -22,14 +25,14 @@ static CMN_Rc APS_init(void)
   returnCode = ITimer_init();
   CMN_RC_CHECK(returnCode);
 
-  if (returnCode == CMN_OK)
-  {
-    CMN_print("SUCCESS");
-  }
-  else
-  {
-    CMN_print("ERROR: UNSUCCESSFUL INITIALIZATION");
-  }
+  //  if (returnCode == CMN_OK)
+  //  {
+  //    CMN_print("SUCCESS");
+  //  }
+  //  else
+  //  {
+  //    CMN_print("ERROR: UNSUCCESSFUL INITIALIZATION");
+  //  }
 
   return returnCode;
 }
@@ -37,7 +40,8 @@ static CMN_Rc APS_init(void)
 /* Entry point of the program */
 int main(void)
 {
-  return APS_init();
+  CMN_Rc rc = APS_init();
+  return 0;
 }
 
 /*** end of file ***/

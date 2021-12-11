@@ -3,7 +3,6 @@
 add_library(
 	IAPSCommon_Lib STATIC
 	iaps_common.c
-	iaps_common.h
 	)
 
 target_include_directories(IAPSCommon_Lib PUBLIC
