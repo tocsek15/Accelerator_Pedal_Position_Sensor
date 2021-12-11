@@ -22,14 +22,14 @@ static CMN_Rc APS_init(void)
   returnCode = ITimer_init();
   CMN_RC_CHECK(returnCode);
 
-  //  if (returnCode == CMN_OK)
-  //  {
-  //    CMN_print("SUCCESS");
-  //  }
-  //  else
-  //  {
-  //    CMN_print("ERROR: UNSUCCESSFUL INITIALIZATION");
-  //  }
+  if (returnCode == CMN_OK)
+  {
+    CMN_print("SUCCESS");
+  }
+  else
+  {
+    CMN_print("ERROR: UNSUCCESSFUL INITIALIZATION");
+  }
 
   return returnCode;
 }

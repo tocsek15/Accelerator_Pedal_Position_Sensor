@@ -1,8 +1,9 @@
 # ICommon interface CMake file
 
 add_library(
-	IAPSCommon_Lib OBJECT
-	${CMAKE_CURRENT_LIST_DIR}/iaps_common.c
+	IAPSCommon_Lib STATIC
+	iaps_common.c
+	iaps_common.h
 	)
 
 target_include_directories(IAPSCommon_Lib PUBLIC
