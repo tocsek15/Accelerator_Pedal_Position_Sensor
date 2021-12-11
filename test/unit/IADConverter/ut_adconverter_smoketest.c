@@ -2,6 +2,7 @@
 #include <System.h>
 #include <iaps_adconverter.h>
 #include <iaps_common.h>
+#include <sensor_mock.h>
 #include <uCUnit-v1.0.h>
 
 /* Test cases */

@@ -9,12 +9,14 @@ function(create_ut_iadconverter test_name)
   		target_include_directories(ut_${test_name}_app PUBLIC
   			$<TARGET_PROPERTY:IAPSCommon_Lib,INTERFACE_INCLUDE_DIRECTORIES>
   			$<TARGET_PROPERTY:IADConverter_Lib,INTERFACE_INCLUDE_DIRECTORIES>
+  			$<TARGET_PROPERTY:Mock_Sensors_Lib,INTERFACE_INCLUDE_DIRECTORIES>
   			$<TARGET_PROPERTY:ucunit,INTERFACE_INCLUDE_DIRECTORIES>
   			)
   			
   		target_link_libraries(ut_${test_name}_app PRIVATE
   			IAPSCommon_Lib
   			IADConverter_Lib
+  			Mock_Sensors_Lib
   			ucunit
   			)
   		
