@@ -26,7 +26,7 @@ static void ut_adc_30_differentNumbers(void)
  */
 static void ut_adc_30_sameNumbers(void)
 {
-  UCUNIT_TestcaseBegin("ut_adc_30_differentNumbers");
+  UCUNIT_TestcaseBegin("ut_adc_30_sameNumbers");
 
   /* Preparation */
   uint16_t lMainSensorValue   = 999u;
