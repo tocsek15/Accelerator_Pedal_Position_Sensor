@@ -4,7 +4,7 @@
  *
  */
 /* Includes */
-#include "../IAPSCommon/iaps_common.h"
+#include <iaps_common.h>
 
 /* Functions */
 /*!
