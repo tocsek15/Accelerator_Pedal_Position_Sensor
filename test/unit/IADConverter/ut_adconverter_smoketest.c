@@ -8,7 +8,7 @@
 /* Test cases */
 static void ut_adconverter_smoketest_getsensorvalue(void)
 {
-  UCUNIT_TestcaseBegin("ut_adconverter_smoketest");
+  UCUNIT_TestcaseBegin("ut_adconverter_smoketest_getsensorvalue");
 
   /* Variable preparation */
   uint16_t lMainSensorValue   = 0u;
@@ -27,6 +27,27 @@ static void ut_adconverter_smoketest_getsensorvalue(void)
   UCUNIT_TestcaseEnd();
 }
 
+static void ut_adconverter_smoketest_crosschecksensorvalues(void)
+{
+  UCUNIT_TestcaseBegin("ut_adconverter_smoketest_crosschecksensorvalues");
+
+  /* Variable preparation */
+  uint16_t lMainSensorValue   = 100u;
+  uint16_t lBackupSensorValue = 100u;
+
+  /* Test, if the two values match */
+  UCUNIT_CheckIsEqual(CMN_OK, IADConverter_crossCheckSensorValues(lMainSensorValue, lBackupSensorValue));
+
+  /* Causing error */
+  lMainSensorValue   = 0u;
+  lBackupSensorValue = 200u;
+
+  /* Test, if the two values don't match */
+  UCUNIT_CheckIsEqual(CMN_ERROR, IADConverter_crossCheckSensorValues(lMainSensorValue, lBackupSensorValue));
+
+  UCUNIT_TestcaseEnd();
+}
+
 
 /* Smoketest for Test Driven Development for the APS */
 int main(void)
@@ -35,6 +56,7 @@ int main(void)
 
   /* Get sensor Value Smoketest */
   ut_adconverter_smoketest_getsensorvalue();
+  ut_adconverter_smoketest_crosschecksensorvalues();
 
   UCUNIT_WriteSummary();
   UCUNIT_Shutdown();
