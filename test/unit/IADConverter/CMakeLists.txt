@@ -28,3 +28,4 @@ endfunction()
 # TODO Add tests like this:
 create_ut_iadconverter(adconverter_smoketest)
 create_ut_iadconverter(adc_29_getsensorvalue)
+create_ut_iadconverter(adc_30_crosschecksensorvalues)
