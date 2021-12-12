@@ -4,7 +4,8 @@
  *
  */
 /* Includes */
-#include "../IAPSCommon/iaps_common.h"
+#include <iaps_common.h>
+#include <sensor_mock.h>
 
 /* Function prototypes */
 
@@ -19,11 +20,13 @@ CMN_Rc IADConverter_init(void);
 /*!
  * @brief Gets the values from the sensors.
  *
- * @param[in,out] sensor1  The first sensor numerical value.
- * @param[in,out] sensor2  The second sensor numerical value.
+ * /req {APS-24}
+ *
+ * @param[in,out] mainSensorValue    The main sensor voltage in numerical value.
+ * @param[in,out] backupSensorValue  The backup sensor voltage in numerical value.
  *
  * @return State of the reception.
  */
-CMN_Rc IADConverter_getSensorValue(void);
+CMN_Rc IADConverter_getSensorValue(uint16_t* mainSensorValuePtr, uint16_t* backupSensorValuePtr);
 
 /*** end of file ***/

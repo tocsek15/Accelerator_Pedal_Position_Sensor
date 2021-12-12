@@ -10,11 +10,9 @@
 #include <iaps_core.h>
 #include <iaps_timer.h>
 
-
 /* Functions */
 static CMN_Rc APS_init(void)
 {
-
   CMN_Rc returnCode;
 
   /* Initializing interfaces */
@@ -24,15 +22,6 @@ static CMN_Rc APS_init(void)
   CMN_RC_CHECK(returnCode);
   returnCode = ITimer_init();
   CMN_RC_CHECK(returnCode);
-
-  //  if (returnCode == CMN_OK)
-  //  {
-  //    CMN_print("SUCCESS");
-  //  }
-  //  else
-  //  {
-  //    CMN_print("ERROR: UNSUCCESSFUL INITIALIZATION");
-  //  }
 
   return returnCode;
 }
