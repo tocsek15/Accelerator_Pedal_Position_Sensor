@@ -10,9 +10,9 @@ jobs:
     steps:
       - checkout
       - run: New-Item -Path "C:\Users\circleci\project" -Name "build" -ItemType "directory"
-      - run: Get-ChildItem -Directory
+      - run: cmake -S src -B "/build"
       - run: cd ./build/
-      - run: cmake --build .
+      - run: Get-ChildItem -Directory
       - run: make
           
       
