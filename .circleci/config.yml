@@ -9,6 +9,8 @@ jobs:
     executor: win/default
     steps:
       - checkout
+      - run: choco install mingw
+      - run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
       - run: New-Item -Path "C:\Users\circleci\project" -Name "build" -ItemType "directory"
       - run: cmake -S src -B "/build"
       - run: cd ./build/
