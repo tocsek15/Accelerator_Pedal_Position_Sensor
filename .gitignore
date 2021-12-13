@@ -56,5 +56,8 @@ dkms.conf
 /Debug/
 /Release/
 
+# Build directory
+/build/
+
 # Readme
 *.md
