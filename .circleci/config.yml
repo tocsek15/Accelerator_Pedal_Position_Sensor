@@ -5,7 +5,7 @@ orbs:
   jira: circleci/jira@1.0.5
 
 jobs:
-  prepare_env:
+  run_tests:
     executor: win/default
     steps:
       - checkout
