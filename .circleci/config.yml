@@ -12,7 +12,7 @@ jobs:
       - run: choco install mingw
       - run: choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
       - run: New-Item -Path "C:\Users\circleci\project" -Name "build" -ItemType "directory"
-      - run: cmake -S src -B "/build"
+      - run: cmake -B "/build"
       - run: cd ./build/
       - run: Get-ChildItem -Directory
       - run: make
