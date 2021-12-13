@@ -22,6 +22,12 @@
     return 1u;                                                                                                              \
   }
 
+/* Null Pointer Check */
+#define CMN_PTR_NULL_CHECK(ptr)                                                                                             \
+  if (ptr == NULL)                                                                                                          \
+  {                                                                                                                         \
+    return CMN_ERROR;                                                                                                       \
+  }
 
 /* Interface specific types */
 
