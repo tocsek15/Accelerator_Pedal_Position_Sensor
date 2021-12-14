@@ -9,6 +9,7 @@
 
 #define SENSOR_UPPER_VALUE 5000u
 #define SENSOR_FLOOR_VALUE 0u
+#define SENSOR_TOLERANCE   50u
 
 #define CHECK_VALUE_RANGE(val)                                                                                              \
   if ((val < SENSOR_FLOOR_VALUE) || (val > SENSOR_UPPER_VALUE))                                                             \

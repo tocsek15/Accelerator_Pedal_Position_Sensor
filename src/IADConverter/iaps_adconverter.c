@@ -17,12 +17,14 @@ CMN_Rc IADConverter_init(void)
 
 CMN_Rc IADConverter_crossCheckSensorValues(uint16_t mainSensorValue, uint16_t backupSensorValue)
 {
-  if (mainSensorValue != backupSensorValue)
+  int32_t tempHolder = abs(mainSensorValue - backupSensorValue);
+
+  if (tempHolder <= SENSOR_TOLERANCE)
   {
-    return CMN_ERROR;
+    return CMN_OK;
   }
 
-  return CMN_OK;
+  return CMN_ERROR;
 }
 
 CMN_Rc IADConverter_getSensorValue(uint16_t* mainSensorValuePtr, uint16_t* backupSensorValuePtr)

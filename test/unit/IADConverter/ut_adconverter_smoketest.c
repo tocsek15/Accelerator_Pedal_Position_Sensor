@@ -35,14 +35,28 @@ static void ut_adconverter_smoketest_crosschecksensorvalues(void)
   uint16_t lMainSensorValue   = 100u;
   uint16_t lBackupSensorValue = 100u;
 
-  /* Test, if the two values match */
+  /* Test */
   UCUNIT_CheckIsEqual(CMN_OK, IADConverter_crossCheckSensorValues(lMainSensorValue, lBackupSensorValue));
 
   /* Causing error */
   lMainSensorValue   = 0u;
   lBackupSensorValue = 200u;
 
-  /* Test, if the two values don't match */
+  /* Test */
+  UCUNIT_CheckIsEqual(CMN_ERROR, IADConverter_crossCheckSensorValues(lMainSensorValue, lBackupSensorValue));
+
+  /* Testing sensor limits */
+  lMainSensorValue   = 0u;
+  lBackupSensorValue = 50u;
+
+  /* Test */
+  UCUNIT_CheckIsEqual(CMN_OK, IADConverter_crossCheckSensorValues(lMainSensorValue, lBackupSensorValue));
+
+  /* Testing sensor limits */
+  lMainSensorValue   = 51u;
+  lBackupSensorValue = 0u;
+
+  /* Test */
   UCUNIT_CheckIsEqual(CMN_ERROR, IADConverter_crossCheckSensorValues(lMainSensorValue, lBackupSensorValue));
 
   UCUNIT_TestcaseEnd();
