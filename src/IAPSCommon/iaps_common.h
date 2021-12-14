@@ -8,7 +8,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
-
+#include <stdlib.h>
 
 /* Interface specific defines */
 #define CMN_OK                (CMN_Rc)0u
